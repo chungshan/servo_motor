@@ -1,0 +1,7 @@
+<launch>
+    <node pkg="servo" name="servo_motor" type="publisher" output="screen" >
+     </node>
+
+    <node pkg="offb_self" name="offb" type="follow_test" output="screen" >
+     </node>
+</launch>

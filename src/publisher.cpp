@@ -49,6 +49,7 @@ int main(int argc, char **argv)
 
   int count = 0;
 
+
   while (ros::ok())
   {
     if(msg.data==180)
@@ -56,9 +57,9 @@ int main(int argc, char **argv)
         int c = getch();
         	if (c != EOF) {
             		switch (c) {
-            		//case 65:    // key up
+                //case 113:    // key up
                 	//msg.data  += 5;                	break;
-            		case 66:    // key down
+                case 122:    // key down
                 	msg.data -= 5;
                 	break;
                         }}}
@@ -67,9 +68,9 @@ int main(int argc, char **argv)
         int c = getch();
            if (c != EOF) {
                  switch (c) {
-                   case 65:    // key up
+                   case 113:    // key up
                     msg.data  += 5;                       break;
-                        //case 66:    // key down
+                        //case 122:    // key down
                         //msg.data -= 5;
                         //break;
                             }
@@ -80,16 +81,19 @@ int main(int argc, char **argv)
         int c = getch();
            if (c != EOF) {
                  switch (c) {
-                   case 65:    // key up
+                   case 113:    // key up
                     msg.data  += 5;                       break;
-                   case 66:    // key down
+                   case 122:    // key down
                     msg.data -= 5;
                         break;
                             }
                           }
+           //std::cout << c << std::endl;
       }
 
+
     ROS_INFO("%d", msg.data);
+
     servo1_pub.publish(msg);
     servo2_pub.publish(msg);
     ros::spinOnce();
